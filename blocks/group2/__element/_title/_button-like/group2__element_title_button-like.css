@@ -1,0 +1,14 @@
+.group2__element_title_button-like {
+  background-image: url(../../../../../images/like.svg);
+  border: none;
+  padding: 0;
+  margin: 30px 20px 30px 0;
+  width: 23px;
+  height: 20px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.group2__element_title_button-like:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}

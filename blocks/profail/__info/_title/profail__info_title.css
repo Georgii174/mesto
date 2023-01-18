@@ -1,0 +1,5 @@
+.profail__info_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

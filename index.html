@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./pages/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Место</title>
+</head>
+
+<body class="page">
+  <header class="header">
+    <img src="./images/logo/logo.svg" alt="место" class="header__logo">
+  </header>
+  <main class="content">
+    <section class="profail">
+      <img src="./images/image.jpg" class="profail__avatar" alt="логотип">
+      <div class="profail__info">
+        <div class="profail__info_title">
+          <h1 class="profail__info_name">Жак-Ив Кусто</h1>
+          <button class="profail__info_edit-button"></button>
+        </div>
+        <p class="profail__info_text">Исследователь океана</p>
+      </div>
+      <button class="profail__add-button"></button>
+    </section>
+    <section class="group2">
+      <div class="group2__element">
+        <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="group2__element_images">
+        <div class="group2__element_title">
+          <h2 class="group2__element_title_name">Карачаевск</h2>
+          <button class="group2__element_title_button-like"></button>
+        </div>
+      </div>
+      <div class="group2__element">
+        <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Эльбрус" class="group2__element_images">
+        <div class="group2__element_title">
+          <h2 class="group2__element_title_name">Гора Эльбрус</h2>
+          <button class="group2__element_title_button-like"></button>
+        </div>
+      </div>
+      <div class="group2__element">
+        <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Домбай" class="group2__element_images">
+        <div class="group2__element_title">
+          <h2 class="group2__element_title_name">Домбай</h2>
+          <button class="group2__element_title_button-like"></button>
+        </div>
+      </div>
+      <div class="group2__element">
+        <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Эльбрус" class="group2__element_images">
+        <div class="group2__element_title">
+          <h2 class="group2__element_title_name">Гора Эльбрус</h2>
+          <button class="group2__element_title_button-like"></button>
+        </div>
+      </div>
+      <div class="group2__element">
+        <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Домбай" class="group2__element_images">
+        <div class="group2__element_title">
+          <h2 class="group2__element_title_name">Домбай</h2>
+          <button class="group2__element_title_button-like"></button>
+        </div>
+      </div>
+      <div class="group2__element">
+        <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="group2__element_images">
+        <div class="group2__element_title">
+          <h2 class="group2__element_title_name">Карачаевск</h2>
+          <button class="group2__element_title_button-like"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2022. Георгий Анисимов</p>
+  </footer>
+  <div class="popup">
+    <div class="popup__conteiner">
+      <img src="./images/Close_Icon.svg" alt="закрыть" class="popup__close">
+      <h3 class="popup__conteiner_title">Редактировать профиль</h3>
+      <form class="popup__content">
+        <input type="text" class="popup__content_name" name="nameInput" placeholder="Жак-Ив Кусто">
+        <input type="text" class="popup__content_text" name="jobInput" placeholder="Исследователь океана">
+        <button class="popup__content_button-save" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

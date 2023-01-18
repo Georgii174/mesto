@@ -1,0 +1,33 @@
+.popup__close {
+  width: 19px;
+  position: absolute;
+  top: 116px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.popup__close:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (min-width: 480px) {
+  .popup__close {
+    width: 26px;
+    top: 198px;
+    right: 316px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .popup__close {
+    top: 203px;
+    right: 335px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .popup__close {
+    top: 280px;
+    right: 437px;
+  }
+}
