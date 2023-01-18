@@ -1,7 +1,7 @@
 const popup = document.querySelector('.popup');
 const openPopupButtons = document.querySelectorAll('.profail__info_edit-button');
 const closePopupButtons = document.querySelector('.popup__close');
-//const saveButtonsFormElement = document.querySelector('.popup__content_button-save');
+const saveButtonsFormElement = document.querySelector('.popup__content_button-save');
 const nameProfail = document.querySelector('.profail__info_name')
 const jobProfail = document.querySelector('.profail__info_text')
 const nameInputElement = document.querySelector('.popup__content_name');
@@ -32,7 +32,7 @@ function saveButtonsFormSubmit (evt) {
   evt.preventDefault();
   nameProfail.textContent = nameInputElement.value;
   jobProfail.textContent = jobInputElement.value;
-  closeFormsElement('.popup__open');
+  closeFormsElement();
 }
 
 formElement.addEventListener('submit', saveButtonsFormSubmit);
