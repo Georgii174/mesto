@@ -1,4 +1,4 @@
-.profail__info_name {
+.profail__name {
   font-family: 'Inter', 'Arial', sans-serif;
   font-weight: 500;
   font-size: 27px;
@@ -6,12 +6,17 @@
   text-align: center;
   color: #ffffff;
   margin: 5px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 288px;
 }
 
 @media screen and (min-width: 480px) {
-  .profail__info_name {
-    font-size: 44px;
-    line-height: 48px;
+  .profail__name {
+    font-size: 40px;
+    line-height: 52px;
     margin: 62px 18px 0 30px;
+    max-width: 300px;
   }
 }

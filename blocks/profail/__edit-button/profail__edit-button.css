@@ -1,25 +1,24 @@
-.profail__info_edit-button {
+.profail__edit-button {
   width: 18px;
   height: 18px;
   border: 1px solid #FFFFFF;
   border-radius: 2px;
   padding: 0;
-  margin: 10px 0 0 10px;
+  margin: 10px 0 0 13px;
   background-color: #000000;
-  background-image: url(../../../../images/kar.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url(../../../../images/kar.svg) center no-repeat;
   cursor: pointer;
+  background-color: transparent;
 }
 
-.profail__info_edit-button:hover {
+.profail__edit-button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
 @media screen and (min-width: 480px) {
-  .profail__info_edit-button {
+  .profail__edit-button {
     width: 24px;
-  height: 24px;
+    height: 24px;
     margin-top: 77px;
   }
 }

@@ -14,39 +14,39 @@
 
 @import url(../blocks/profail/__info/profail__info.css);
 
-@import url(../blocks/profail/__info/_name/profail__info_name.css);
+@import url(../blocks/profail/__name/profail__name.css);
 
-@import url(../blocks/profail/__info/_text/profail__info_text.css);
+@import url(../blocks/profail/__text/profail__text.css);
 
 @import url(../blocks/profail/__add-button/profail__add-button.css);
 
-@import url(../blocks/profail/__info/_edit-button/profail__info_edit-button.css);
+@import url(../blocks/profail/__edit-button/profail__edit-button.css);
 
-@import url(../blocks/profail/__info/_title/profail__info_title.css);
+@import url(../blocks/profail/__title/profail__title.css);
 
-@import url(../blocks/group2/group2.css);
+@import url(../blocks/group/group.css);
 
-@import url(../blocks/group2/__element/_images/group2__element_images.css);
+@import url(../blocks/group/__images/group__images.css);
 
-@import url(../blocks/group2/__element/group2__element.css);
+@import url(../blocks/group/__element/group__element.css);
 
-@import url(../blocks/group2/__element/_title/group2__element_title.css);
+@import url(../blocks/group/__title/group__title.css);
 
-@import url(../blocks/group2/__element/_title/_button-like/group2__element_title_button-like.css);
+@import url(../blocks/group/__button-like/group___button-like.css);
 
-@import url(../blocks/group2/__element/_title/_name/group2__element_title_name.css);
+@import url(../blocks/group/__title/_name/group__title_name.css);
 
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
 @import url(../blocks/popup/popup.css);
 
-@import url(../blocks/popup/__open/popup__open.css);
+@import url(../blocks/popup/_is-opened/popup_is-opened.css);
 
 @import url(../blocks/popup/__close/popup__close.css);
 
-@import url(../blocks/popup/__conteiner/_title/popup__conteiner_title.css);
+@import url(../blocks/popup/__title/popup__title.css);
 
-@import url(../blocks/popup/__conteiner/popup__conteiner.css);
+@import url(../blocks/popup/__container/popup__container.css);
 
 @import url(../blocks/popup/__content/popup__content.css);
 

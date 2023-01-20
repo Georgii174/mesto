@@ -1,0 +1,9 @@
+.group__title {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 55px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}

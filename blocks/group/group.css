@@ -1,15 +1,15 @@
-.group2 {
+.group {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fill);
   justify-content: center;
-  margin-top: 35px;
+  margin-top: 29px;
 }
 
 
 
 @media screen and (min-width: 480px) {
-  .group2 {
+  .group {
     gap: 16px;
     grid-template-columns: repeat(3, 282px);
   }
