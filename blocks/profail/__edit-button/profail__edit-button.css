@@ -5,10 +5,9 @@
   border-radius: 2px;
   padding: 0;
   margin: 10px 0 0 13px;
-  background-color: #000000;
+  background-color: transparent;
   background: url(../../../images/kar.svg) center no-repeat;
   cursor: pointer;
-  background-color: transparent;
   background-size: cover;
 }
 
