@@ -1,5 +1,5 @@
 .group__button-like {
-  background: url(../../../../../images/like.svg) center no-repeat;
+  background: url(../../../images/like.svg) center no-repeat;
   border: none;
   padding: 0;
   margin: 30px 20px 30px 0;
@@ -7,6 +7,7 @@
   height: 20px;
   cursor: pointer;
   background-color: transparent;
+  background-size: cover;
 }
 
 .group__button-like:hover {
