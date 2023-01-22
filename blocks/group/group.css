@@ -3,14 +3,19 @@
   gap: 20px;
   grid-template-columns: repeat(auto-fill);
   justify-content: center;
-  margin-top: 29px;
+  margin-top: 36px;
 }
 
-
-
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 540px) {
   .group {
-    gap: 16px;
+    gap: 20px 16px;
+    grid-template-columns: repeat(2, 282px);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .group {
+    margin-top: 27px;
     grid-template-columns: repeat(3, 282px);
   }
 }

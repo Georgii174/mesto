@@ -3,31 +3,23 @@ const popupOpenButtonElement = document.querySelector('.profail__edit-button');
 const popupCloseButtonElement = popupElement.querySelector('.popup__close');
 const nameProfail = document.querySelector('.profail__name')
 const jobProfail = document.querySelector('.profail__text')
-const nameInputElement = popupElement.querySelector('.popup__content_name');
-const jobInputElement = popupElement.querySelector('.popup__content_text');
+const nameInputElement = popupElement.querySelector('.popup__name');
+const jobInputElement = popupElement.querySelector('.popup__text');
 const formElement = document.querySelector('.popup__container');
 
-const openPopup = function (event) {
-  popupElement.classList.add('popup_is-opened');
+const openPopup = function () {
+  popupElement.classList.add('popup__opened');
   nameInputElement.value = nameProfail.textContent;
   jobInputElement.value = jobProfail.textContent;
 };
 
 const closePopup = function () {
-  popupElement.classList.remove('popup_is-opened');
-};
-
-const closePopupByClickOnOverlay = function(event) {
-  if(event.target !== event.currentTarget){
-    return;
-  }
-
-  closePopup();
+  popupElement.classList.remove('popup__opened');
 };
 
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
-popupElement.addEventListener('click', closePopupByClickOnOverlay);
+
 
 
 function saveButtonFormSubmit (evt) {
@@ -61,4 +53,11 @@ formElement.addEventListener('submit', saveButtonFormSubmit);
 //     popup.classList.remove('.popup__opened');
 //   }
 // });
+// const closePopupByClickOnOverlay = function(event) {
+//   if(event.target !== event.currentTarget){
+//     return;
+//   }
 
+//   closePopup();
+// };
+// popupElement.addEventListener('click', closePopupByClickOnOverlay);

@@ -1,5 +1,5 @@
-.group__title_name {
-  margin: 25px 0 0 21px;
+.group__name {
+  margin: 24px 0 0 21px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

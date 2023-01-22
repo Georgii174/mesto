@@ -2,8 +2,8 @@
   font-family: 'Inter', 'Arial', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 14px;
-  color: #FFFFFF;
+  line-height: 17px;
+  color: #545454;
   padding: 37px 20px 24px;
   margin: 0;
   min-width: 186px;
@@ -12,8 +12,8 @@
 
 @media screen and (min-width: 480px) {
   .footer__copyright {
-    font-size: 14px;
-    line-height: 18px;
-    padding: 60px 3px 24px;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 51px 0 24px;
   }
 }

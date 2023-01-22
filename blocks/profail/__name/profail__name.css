@@ -9,14 +9,14 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 288px;
+  margin: 3px 0 0 28px;
 }
 
 @media screen and (min-width: 480px) {
   .profail__name {
-    font-size: 40px;
-    line-height: 52px;
-    margin: 62px 18px 0 30px;
-    max-width: 300px;
+    font-size: 42px;
+    line-height: 48px;
+    margin: 61px 0 0 30px;
+
   }
 }

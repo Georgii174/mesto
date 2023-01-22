@@ -16,7 +16,8 @@
 
 @media screen and (min-width: 480px) {
   .profail__add-button {
-    width: 150px;
-    margin: 75px 0 0 244px;
+    width: 151px;
+    margin: 74px 0 0 243px;
+    background-size: 22px 22px;
   }
 }
