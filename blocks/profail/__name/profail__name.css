@@ -10,7 +10,9 @@
   white-space: nowrap;
   overflow: hidden;
   margin: 3px 0 0 28px;
+  max-width: 346px;
 }
+
 
 @media screen and (min-width: 480px) {
   .profail__name {
