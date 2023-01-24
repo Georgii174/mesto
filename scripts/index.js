@@ -3,8 +3,8 @@ const popupOpenButtonElement = document.querySelector('.profail__edit-button');
 const popupCloseButtonElement = popupElement.querySelector('.popup__close');
 const nameProfail = document.querySelector('.profail__name')
 const jobProfail = document.querySelector('.profail__text')
-const nameInputElement = popupElement.querySelector('.popup__name');
-const jobInputElement = popupElement.querySelector('.popup__text');
+const nameInputElement = popupElement.querySelector('.popup__input_name_block');
+const jobInputElement = popupElement.querySelector('.popup__input_text_block');
 const formElement = document.querySelector('.popup__container');
 
 const openPopup = function () {

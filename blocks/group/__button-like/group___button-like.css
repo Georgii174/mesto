@@ -12,6 +12,6 @@
 }
 
 .group__button-like:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.5;
   transition: 0.5s ease-in-out;
 }
