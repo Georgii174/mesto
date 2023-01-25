@@ -1,5 +1,10 @@
 .profail__blok {
-  min-width: 282px;
-  max-width: 380px;
+  max-width: 282px;
   margin: 0 auto 0;
+}
+
+@media screen and (min-width: 768px) {
+  .profail__blok {
+    max-width: 380px;
+  }
 }
