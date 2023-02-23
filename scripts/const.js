@@ -34,9 +34,9 @@ const initialCards = [
   },
 ];
 
-const popupElement = document.querySelector('.popup__profel');
-const popupElementCard = document.querySelector('.popup__new-card');
-const popupElementImagesCard = document.querySelector('.popup__images-card');
+const popupElement = document.querySelector('.popup_profel');
+const popupElementCard = document.querySelector('.popup_new-card');
+const popupElementImagesCard = document.querySelector('.popup_images-card');
 const popupOpenButtonElement = document.querySelector('.profail__edit-button');
 const popupAddButtonElement = document.querySelector('.profail__add-button');
 const popupImagBtElement = document.querySelector('.group__images')
