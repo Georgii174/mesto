@@ -2,6 +2,7 @@
   max-width: 282px;
   max-height: 361px;
   border-radius: 10px;
+  position: relative;
 }
 
 .group__element:last-child {
