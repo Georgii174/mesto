@@ -10,7 +10,6 @@
   overflow: hidden;
   margin: 3px 0 0 41px;
   max-width: 218px;
-  text-align: left;
 }
 
 
@@ -20,5 +19,6 @@
     line-height: 48px;
     margin: 61px 0 0 8px;
     max-width: 330px;
+    text-align: left;
   }
 }
