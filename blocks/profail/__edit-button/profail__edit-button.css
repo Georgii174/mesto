@@ -3,7 +3,7 @@
   height: 18px;
   border: 1px solid #FFFFFF;
   padding: 0;
-  margin: 11px 0 0 11px;
+  margin: 11px 0 0 -8px;
   background-color: transparent;
   background: url(../../../images/kar.svg) center no-repeat;
   cursor: pointer;
@@ -18,7 +18,7 @@
   .profail__edit-button {
     width: 25px;
     height: 24px;
-    margin: 76px 0 0 17px;
+    margin: 76px 0 0 8px;
     background-size: 10px 10px;
     padding-left: 22px;
   }

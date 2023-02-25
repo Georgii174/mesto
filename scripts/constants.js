@@ -39,7 +39,6 @@ const popupElementCard = document.querySelector('.popup_new-card');
 const popupElementImagesCard = document.querySelector('.popup_images-card');
 const popupOpenButtonElement = document.querySelector('.profail__edit-button');
 const popupAddButtonElement = document.querySelector('.profail__add-button');
-const popupImagBtElement = document.querySelector('.group__images')
 const closeBtProfel = document.querySelector('.popup__close_profel');
 const closeBtNewCard = document.querySelector('.popup__close_new-card');
 const closeBtImagesCars = document.querySelector('.popup__close_images-card');
@@ -51,13 +50,10 @@ const nameCardElement = popupElementCard.querySelector('.popup__input_name_card'
 const linkCardElement = popupElementCard.querySelector('.popup__input_link_card');
 const formElement = document.querySelector('.popup__content-profel');
 const newCardElement = document.querySelector('.popup__content_new-cards');
-const content = document.querySelector('.content');
-const cardGroup = content.querySelector('.group');
 const addBt = document.querySelector('.popup__button-add');
 const imgPopup = document.querySelector('.popup__images-cards');
 const titlePopup = document.querySelector('.popup__name-cards');
 const cardTemp = document.querySelector('#group-template').content;
-const cardElement = cardTemp.cloneNode(true);
 const cardContent = document.querySelector('.group');
 
 

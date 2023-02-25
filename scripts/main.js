@@ -1,5 +1,3 @@
-
-
 // закрытия попап по пустому полю
 // const closePopupByClickOnOverlay = function(event) {
 //   if(event.target !== event.currentTarget){
@@ -9,4 +7,3 @@
 //   closePopup();
 // };
 // popupElement.addEventListener('click', closePopupByClickOnOverlay);
-
