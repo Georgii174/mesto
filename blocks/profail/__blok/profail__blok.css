@@ -13,6 +13,8 @@
     grid-column-gap: 10px;
     grid-row-gap: 0;
     max-width: 336px;
-    padding-right: 135px;
+    /* padding-right: 135px; */
+    margin-left: 22px;
+
   }
 }
