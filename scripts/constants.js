@@ -48,12 +48,18 @@ const nameInputElement = popupElement.querySelector('.popup__input_name_block');
 const jobInputElement = popupElement.querySelector('.popup__input_text_block');
 const nameCardElement = popupElementCard.querySelector('.popup__input_name_card');
 const linkCardElement = popupElementCard.querySelector('.popup__input_link_card');
-const formElement = document.querySelector('.popup__content-profel');
-const newCardElement = document.querySelector('.popup__content_new-cards');
+const formElement = document.querySelector('.popup__form-profel');
+const newCardElement = document.querySelector('.popup__form_new-cards');
 const addBt = document.querySelector('.popup__button-add');
 const imgPopup = document.querySelector('.popup__images-cards');
 const titlePopup = document.querySelector('.popup__name-cards');
 const cardTemp = document.querySelector('#group-template').content;
 const cardContent = document.querySelector('.group');
-
-
+const validPopup = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+};

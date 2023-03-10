@@ -60,14 +60,32 @@ function addBtFormSubmit(evt) {
   closePopup(popupElementCard);
 };
 
-// открыть.закрыть попап
+// открыть попап
 function popupOpen(popup) {
   popup.classList.add('popup_opened');
 };
-
+// закрыть попап
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
 };
+//закрытие попап по клавише 'Esc'
+document.addEventListener('keydown', (evt) => {
+  if (evt.key === 'Escape') {
+    closePopup(popupElement);
+    closePopup(popupElementCard);
+    closePopup(popupElementImagesCard);
+  };
+});
+// закрытия попап по клику на пустую область
+const closePopupByClickOnOverlay = function (evt) {
+  if (evt.target !== evt.currentTarget) {
+    return;
+  };
+  closePopup(popupElement);
+  closePopup(popupElementCard);
+  closePopup(popupElementImagesCard);
+};
+
 // функция профеля
 function openPopup() {
   nameInputElement.value = nameProfail.textContent;
@@ -91,3 +109,6 @@ closeBtImagesCars.addEventListener('click', function () {
 });
 newCardElement.addEventListener('submit', addBtFormSubmit);
 formElement.addEventListener('submit', saveButtonFormSubmit);
+popupElement.addEventListener('click', closePopupByClickOnOverlay);
+popupElementCard.addEventListener('click', closePopupByClickOnOverlay);
+popupElementImagesCard.addEventListener('click', closePopupByClickOnOverlay);
