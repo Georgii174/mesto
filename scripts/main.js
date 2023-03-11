@@ -1,15 +1,8 @@
-function enableValidation(validPopup) {
-  const formList = Array.from(document.querySelectorAll(validPopup.formSelector));
-  formList.forEach((formElement) => {
-    setEventListeners(formElement, validPopup);
-  });
-};
-
 function checkInputValidity(formElement, inputElement, validPopup) {
-  if (inputElement.validity.valid === true) {
-    hideInputError(formElement, inputElement, validPopup);
-  } else {
+  if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage, validPopup);
+  } else {
+    hideInputError(formElement, inputElement);
   }
 };
 
@@ -27,6 +20,7 @@ function hideInputError(formElement, inputElement, validPopup) {
   errorElement.textContent = '';
 };
 
+
 function setEventListeners(formElement, validPopup) {
   const inputList = Array.from(formElement.querySelectorAll(validPopup.inputSelector));
   const buttonElement = formElement.querySelector(validPopup.submitButtonSelector);
@@ -40,20 +34,26 @@ function setEventListeners(formElement, validPopup) {
   });
 };
 
+function hasInvalidInput(inputList) {
+  return inputList.some((inputElement) => {
+    return !inputElement.validity.valid
+  });
+};
+
 function toggleBtState(inputList, buttonElement, validPopup) {
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add(validPopup.inactiveButtonClass);
     buttonElement.setAttribute("disabled", true);
   } else {
     buttonElement.classList.remove(validPopup.inactiveButtonClass);
-    buttonElement.removeAttribute("disabled");
+    buttonElement.removeAttribute("disabled", true);
   }
 };
 
-function hasInvalidInput(inputList) {
-  return inputList.some((inputElement) => {
-    return !inputElement.validity.valid;
+function enableValidation(validPopup) {
+  const formList = Array.from(document.querySelectorAll(validPopup.formSelector));
+  formList.forEach((formElement) => {
+    setEventListeners(formElement, validPopup);
   });
 };
-
 enableValidation(validPopup);

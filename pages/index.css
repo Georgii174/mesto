@@ -62,6 +62,14 @@
 
 @import url(../blocks/popup/__images-wrapper/popup__images-wrapper.css);
 
+@import url(../blocks/popup/__button/_disabled/popup__button_disabled.css);
+
+@import url(../blocks/popup/__error/popup__error.css);
+
+@import url(../blocks/popup/__error/_visible/popup__error_visible.css);
+
+@import url(../blocks/popup/__input/_type/popup__input_type_error.css);
+
 
 
 
