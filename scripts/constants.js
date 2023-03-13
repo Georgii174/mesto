@@ -36,7 +36,7 @@ const initialCards = [
 
 const popupElement = document.querySelector('.popup_profel');
 const popupElementCard = document.querySelector('.popup_new-card');
-const popupElementImagesCard = document.querySelector('.popup__photo');
+const popupElementImagesCard = document.querySelector('.popup_photo');
 const popupOpenButtonElement = document.querySelector('.profail__edit-button');
 const popupAddButtonElement = document.querySelector('.profail__add-button');
 const closeBtProfel = document.querySelector('.popup__close_profel');
