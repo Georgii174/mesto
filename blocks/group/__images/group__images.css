@@ -3,4 +3,8 @@
   height: 282px;
   margin-bottom: -4px;
   border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  object-fit: cover;
+  object-position: center;
+  background-color: white;
 }

@@ -36,7 +36,7 @@ const initialCards = [
 
 const popupElement = document.querySelector('.popup_profel');
 const popupElementCard = document.querySelector('.popup_new-card');
-const popupElementImagesCard = document.querySelector('.popup_images-card');
+const popupElementImagesCard = document.querySelector('.popup__photo');
 const popupOpenButtonElement = document.querySelector('.profail__edit-button');
 const popupAddButtonElement = document.querySelector('.profail__add-button');
 const closeBtProfel = document.querySelector('.popup__close_profel');
@@ -63,3 +63,7 @@ const validPopup = {
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible'
 };
+
+// Рекомендации по названию переменный я принял во внимание и очень благодарен за совет. Просто сейчас уже горят все сроки
+// и просто не до этого. На данный момент пусть так работет. А в будушем обязательно будут делать более понятные переменный.
+// Большое вам спасибо за ваши советы.

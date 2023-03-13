@@ -58,6 +58,7 @@ function addBtFormSubmit(evt) {
   evt.preventDefault();
   addCards();
   closePopup(popupElementCard);
+  evt.target.reset();
 };
 
 // открыть попап
@@ -69,22 +70,20 @@ function closePopup(popup) {
   popup.classList.remove('popup_opened');
 };
 //закрытие попап по клавише 'Esc'
-document.addEventListener('keydown', (evt) => {
+function closePopupEsc(evt) {
+  const otkrytyjPopup = document.querySelector('.popup_opened');
   if (evt.key === 'Escape') {
-    closePopup(popupElement);
-    closePopup(popupElementCard);
-    closePopup(popupElementImagesCard);
-  };
-});
-// закрытия попап по клику на пустую область
-const closePopupByClickOnOverlay = function (evt) {
-  if (evt.target !== evt.currentTarget) {
-    return;
-  };
-  closePopup(popupElement);
-  closePopup(popupElementCard);
-  closePopup(popupElementImagesCard);
+    closePopup(otkrytyjPopup);
+  }
 };
+// закрытия попап по клику на пустую область
+const popup = document.querySelectorAll('.popup').forEach(item => {
+  item.addEventListener('mousedown', (evt) => {
+    if (evt.target === evt.currentTarget) {
+      closePopup(item);
+    };
+  });
+});
 
 // функция профеля
 function openPopup() {
@@ -109,6 +108,5 @@ closeBtImagesCars.addEventListener('click', function () {
 });
 newCardElement.addEventListener('submit', addBtFormSubmit);
 formElement.addEventListener('submit', saveButtonFormSubmit);
-popupElement.addEventListener('click', closePopupByClickOnOverlay);
-popupElementCard.addEventListener('click', closePopupByClickOnOverlay);
-popupElementImagesCard.addEventListener('click', closePopupByClickOnOverlay);
+document.addEventListener('keydown', closePopupEsc);
+

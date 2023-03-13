@@ -31,7 +31,11 @@ function setEventListeners(formElement, validPopup) {
   const inputList = Array.from(formElement.querySelectorAll(validPopup.inputSelector));
   const buttonElement = formElement.querySelector(validPopup.submitButtonSelector);
   toggleBtState(inputList, buttonElement, validPopup);
-
+  formElement.addEventListener('reset', () => {
+    setTimeout(() => {
+      toggleBtState(inputList, buttonElement, validPopup);
+    }, );
+  });
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
       checkInputValidity(formElement, inputElement, validPopup);
@@ -39,6 +43,14 @@ function setEventListeners(formElement, validPopup) {
     });
   });
 };
+
+// function resetError(formElement, validPopup) {
+//   const inputList = Array.from(formElement.querySelectorAll(validPopup.inputSelector));
+//   // очищаем ошибки валидации
+//   inputList.forEach(inputElement => hideInputError(formElement, inputElement, validPopup));
+//   // актуализируем состояние кнопки сабмита
+//   toggleBtState(formElement, inputList, buttonElement, validPopup);
+// };
 
 function toggleBtState(inputList, buttonElement, validPopup) {
   if (hasInvalidInput(inputList)) {
@@ -55,5 +67,7 @@ function hasInvalidInput(inputList) {
     return !inputElement.validity.valid;
   });
 };
+
+
 
 enableValidation(validPopup);

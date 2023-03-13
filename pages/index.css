@@ -58,6 +58,8 @@
 
 @import url(../blocks/popup/__images-cards/popup__images-cards.css);
 
+@import url(../blocks/popup/__photo/popup__photo.css);
+
 @import url(../blocks/popup/__name-cards/popup__name-cards.css);
 
 @import url(../blocks/popup/__images-wrapper/popup__images-wrapper.css);
