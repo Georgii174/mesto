@@ -3,7 +3,7 @@ function saveButtonFormSubmit(evt) {
   evt.preventDefault();
   nameProfail.textContent = nameInputElement.value;
   jobProfail.textContent = jobInputElement.value;
-  closePopup(popupElement);
+  closePopup(popupElementProfel);
 };
 //Карточки из масива
 function renderCards(initialCards) {
@@ -64,16 +64,18 @@ function addBtFormSubmit(evt) {
 // открыть попап
 function popupOpen(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupEsc);
 };
 // закрыть попап
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEsc);
 };
 //закрытие попап по клавише 'Esc'
 function closePopupEsc(evt) {
-  const otkrytyjPopup = document.querySelector('.popup_opened');
   if (evt.key === 'Escape') {
-    closePopup(otkrytyjPopup);
+    const activePopup = document.querySelector('.popup_opened');
+    closePopup(activePopup);
   }
 };
 // закрытия попап по клику на пустую область
@@ -89,16 +91,16 @@ const popup = document.querySelectorAll('.popup').forEach(item => {
 function openPopup() {
   nameInputElement.value = nameProfail.textContent;
   jobInputElement.value = jobProfail.textContent;
-  popupOpen(popupElement);
+  popupOpen(popupElementProfel);
 };
 
 
-popupOpenButtonElement.addEventListener('click', openPopup);
+popupEditButtonElement.addEventListener('click', openPopup);
 popupAddButtonElement.addEventListener('click', function () {
   popupOpen(popupElementCard);
 });
 closeBtProfel.addEventListener('click', function () {
-  closePopup(popupElement);
+  closePopup(popupElementProfel);
 });
 closeBtNewCard.addEventListener('click', function () {
   closePopup(popupElementCard);
@@ -107,6 +109,6 @@ closeBtImagesCars.addEventListener('click', function () {
   closePopup(popupElementImagesCard);
 });
 newCardElement.addEventListener('submit', addBtFormSubmit);
-formElement.addEventListener('submit', saveButtonFormSubmit);
-document.addEventListener('keydown', closePopupEsc);
+formProfelElement.addEventListener('submit', saveButtonFormSubmit);
+
 

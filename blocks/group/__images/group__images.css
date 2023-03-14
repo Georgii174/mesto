@@ -7,4 +7,5 @@
   object-fit: cover;
   object-position: center;
   background-color: white;
+  display: block;
 }
