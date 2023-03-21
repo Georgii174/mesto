@@ -34,12 +34,12 @@
       <h3 class="popup__title">Редактировать профиль</h3>
       <form class="popup__form popup__form-profel" name="popup-content" novalidate>
 
-        <input type="text" class="popup__input popup__input_name_block" id="name-input"
-          name="nameInput" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" required>
+        <input type="text" class="popup__input popup__input_name_block" id="name-input" name="nameInput"
+          placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" required>
         <span class="popup__error popup__error_visible name-input-error"></span>
 
-        <input type="text" class="popup__input popup__input_text_block" id="job-input"
-          name="jobInput" placeholder="Исследователь океана" minlength="2" maxlength="200" required>
+        <input type="text" class="popup__input popup__input_text_block" id="job-input" name="jobInput"
+          placeholder="Исследователь океана" minlength="2" maxlength="200" required>
         <span class="popup__error popup__error_visible job-input-error"></span>
 
         <button class="popup__button" type="submit">Сохранить</button>
@@ -52,12 +52,12 @@
       <h3 class="popup__title">Новое место</h3>
       <form class="popup__form popup__form_new-cards" name="popup__new-cards" novalidate>
 
-        <input type="text" class="popup__input popup__input_name_card" id="nameCard-input"
-          name="nameCard" placeholder="Название" minlength="2" maxlength="30" required>
+        <input type="text" class="popup__input popup__input_name_card" id="nameCard-input" name="nameCard"
+          placeholder="Название" minlength="2" maxlength="30" required>
         <span class="popup__error popup__error_visible nameCard-input-error"></span>
 
-        <input type="url" class="popup__input popup__input_link_card" id="linkCard-input"
-          name="linkCard" placeholder="Ссылка на картинку" required>
+        <input type="url" class="popup__input popup__input_link_card" id="linkCard-input" name="linkCard"
+          placeholder="Ссылка на картинку" required>
         <span class="popup__error popup__error_visible linkCard-input-error"></span>
 
         <button class="popup__button" type="submit">Создать</button>
@@ -71,7 +71,7 @@
       <p class="popup__name-cards"></p>
     </div>
   </div>
-  <template id="group-template">
+  <template class="group-template">
     <article class="group__element">
       <img class="group__images">
       <button type="button" class="group__button-del"></button>
@@ -81,9 +81,7 @@
       </div>
     </article>
   </template>
-  <script src="./scripts/constants.js"></script>
-  <script src="./scripts/index.js"></script>
-  <script src="./scripts/validate.js"></script>
+  <script type="module" src="./scripts/index.js"></script>
 </body>
 
 </html>
