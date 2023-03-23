@@ -39,10 +39,11 @@ const popupCloseButton = document.querySelector('.popup__close_images-card');
 const titlePopup = document.querySelector('.popup__name-cards');
 
 export class Card {
-  constructor(name, link, templateSelector) {
+  constructor(name, link, templateSelector, openPopup) {
     this._name = name;
     this._link = link;
     this._templateSelector = templateSelector;
+    this._openPopup = openPopup;
   }
 
   _getTemplate() {
@@ -74,10 +75,11 @@ export class Card {
   }
 
   _handleOpenPopup() {
+    this._openPopup(popupElement);
     popupImages.src = this._link;
     titlePopup.alt = this._name;
     titlePopup.textContent = this._name;
-    popupElement.classList.add('popup_opened')
+    // popupElement.classList.add('popup_opened')
   }
 
   _handleClosePopup() {
@@ -95,9 +97,14 @@ export class Card {
   }
 
   _setEventListeners() {
-    this._element.addEventListener('click', () => {
+    this._element.querySelector('.group__images').addEventListener('click', () => {
       this._handleOpenPopup();
     });
+    // this._element.addEventListener('click', (evt) => {
+    //   if (evt.target.classList.contains('group__images')) {
+
+    //   }
+    // });
 
     popupCloseButton.addEventListener('click', () => {
       this._handleClosePopup();

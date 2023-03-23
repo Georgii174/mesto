@@ -1,7 +1,6 @@
-import {
-  initialCards,
-  Card
-} from './Card.js';
+import {initialCards, Card} from './Card.js';
+import {FormValidator} from './FormValidator.js';
+import {openPopup, closePopup} from './utils.js'
 
 // Объявление переменных
 // popup
@@ -42,54 +41,42 @@ function saveButtonFormSubmit(evt) {
   jobProfail.textContent = jobInputElement.value;
   closePopup(popupElementProfel);
 };
-// открыть попап
-function openPopup(popup) {
-  popup.classList.add('popup_opened');
-  document.addEventListener('keydown', closePopupEsc);
-};
-// закрыть попап
-function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', closePopupEsc);
-};
-//закрытие попап по клавише 'Esc'
-export function closePopupEsc(evt) {
-  if (evt.key === 'Escape') {
-    const activePopup = document.querySelector('.popup_opened');
-    closePopup(activePopup);
-  }
-};
-// закрытия попап по клику на пустую область
-const popup = document.querySelectorAll('.popup').forEach(item => {
-  item.addEventListener('mousedown', (evt) => {
-    if (evt.target === evt.currentTarget) {
-      closePopup(item);
-    };
-  });
-});
 // функция профеля
 function openProfilePopup() {
   nameInputElement.value = nameProfail.textContent;
   jobInputElement.value = jobProfail.textContent;
   openPopup(popupElementProfel);
 };
+//valadadion form
+form.forEach((formElement) => {
+  const validationForm = new FormValidator(validPopup, formElement);
+  validationForm.enableValidation();
+});
 // Добавление карточек в DOM
 // Карточки из масива
 initialCards.forEach((item) => {
-  const card = new Card(item.name, item.link, '.group-template');
+  const card = new Card(item.name, item.link, '.group-template', openPopup);
   const cardElement = card.generateCard();
   document.querySelector('.group').append(cardElement);
 });
 // Добавление новых карточек из форм
 function addBtFormSubmit(evt) {
   evt.preventDefault();
-  const newCard = new Card(nameCardElement.value, linkCardElement.value, '.group-template');
+  const newCard = new Card(nameCardElement.value, linkCardElement.value, '.group-template', openPopup);
   const cardElement = newCard.generateCard();
+  const validationForm = new FormValidator(validPopup, newCardElement);
+  validationForm._toggleBtState();
   document.querySelector('.group').append(cardElement);
   closePopup(popupElementCard);
-  evt.target.reset();
+  newCardElement.reset();
 };
 
+
+
+// const validationForm = new FormValidator(validPopup, formElement);
+//    validationForm.enableValidation();
+
+// слушатели
 popupEditButtonElement.addEventListener('click', openProfilePopup);
 popupAddButtonElement.addEventListener('click', function () {
   openPopup(popupElementCard);
