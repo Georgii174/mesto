@@ -48,10 +48,10 @@ function openProfilePopup() {
   openPopup(popupElementProfel);
 };
 //valadadion form
-form.forEach((formElement) => {
-  const validationForm = new FormValidator(validPopup, formElement);
-  validationForm.enableValidation();
-});
+  const validationFormProfel = new FormValidator(validPopup, formProfelElement);
+  validationFormProfel.enableValidation();
+  const validationFormAddNewCards = new FormValidator(validPopup, newCardElement);
+  validationFormAddNewCards.enableValidation();
 // Добавление карточек в DOM
 // Карточки из масива
 initialCards.forEach((item) => {

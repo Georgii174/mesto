@@ -1,13 +1,13 @@
 export class FormValidator {
   constructor(formElement, config) {
-    this._config = config;
-    this._formElement = formElement;
-    this._inputList = Array.from(formElement.querySelectorAll(this._config._inputSelector));
-    this._buttonElement = Array.from(formElement.querySelector(this._config._submitButtonSelector));
-  }
-
-  _enableValidation() {
-    this._setEventListeners();
+    this._from = formElement;
+    this._inputSelector = config.inputSelector;
+    this._button = config.submitButtonSelector;
+    this._inactiveButtonClass = config.inactiveButtonClass;
+    this._inputErrorClass = config.inputErrorClass;
+    this._errorClass = config.errorClass;
+    this._inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
+    this._buttonElement = this._from.querySelector(this._button);
   }
 
   _checkInputValidity(inputElement) {
@@ -40,26 +40,30 @@ export class FormValidator {
 
   _toggleBtState(inputList) {
     if (this._hasInvalidInput(inputList)) {
-      this._buttonElement.classList.add(this._config.inactiveButtonClass);
+      this._buttonElement.classList.add(this._inactiveButtonClass);
       this._buttonElement.setAttribute("disabled", true);
     } else {
-      this._buttonElement.classList.remove(this._config.inactiveButtonClass);
+      this._buttonElement.classList.remove(this._inactiveButtonClass);
       this._buttonElement.removeAttribute("disabled");
     }
   }
 
-  _setEventListeners(formElement) {
-    this._toggleBtState(this._inputList, this._buttonElement);
-    this._formElement.addEventListener('reset', () => {
-      setTimeout(() => {
-        this._toggleBtState(this._inputList, this._buttonElement);
-      }, );
-    });
+  _setEventListeners() {
+    this._toggleBtState();
+
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
-        this._checkInputValidity(formElement, inputElement);
-        this._toggleBtState(this._inputList, this._buttonElement);
+        this._checkInputValidity(inputElement);
+        this._toggleBtState();
       });
     });
+  }
+
+  _enableValidation() {
+    this._from.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+    });
+    this._setEventListeners();
+    // this._toggleBtState(this._inputList, this._buttonElement)
   }
 }
