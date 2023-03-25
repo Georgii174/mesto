@@ -6,7 +6,7 @@ export class FormValidator {
     this._buttonElement = formElement.querySelector(this._config.submitButtonSelector);
   }
 
-   _showInputError(inputElement, validationMessage) {
+  _showInputError(inputElement, validationMessage) {
     const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add(this._config.inputErrorClass);
     errorElement.classList.add(this._config.errorClass);
@@ -34,10 +34,16 @@ export class FormValidator {
     });
   }
 
+  disableSubmitBt() {
+    this._buttonElement.classList.add(this._config.inactiveButtonClass);
+    this._buttonElement.setAttribute("disabled", true);
+  }
+
   _toggleBtState(inputList) {
     if (this._hasInvalidInput(inputList)) {
-      this._buttonElement.classList.add(this._config.inactiveButtonClass);
-      this._buttonElement.setAttribute("disabled", true);
+      this.disableSubmitBt();
+      // this._buttonElement.classList.add(this._config.inactiveButtonClass);
+      // this._buttonElement.setAttribute("disabled", true);
     } else {
       this._buttonElement.classList.remove(this._config.inactiveButtonClass);
       this._buttonElement.removeAttribute("disabled");

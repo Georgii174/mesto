@@ -70,7 +70,7 @@ function addBtFormSubmit(evt) {
   const newCard = new Card(nameCardElement.value, linkCardElement.value, '.group-template', openPopup);
   const cardElement = newCard.generateCard();
   const validationFormAddCards = new FormValidator(validPopup, newCardElement);
-  validationFormAddCards._toggleBtState();
+  validationFormAddCards.disableSubmitBt();
   document.querySelector('.group').append(cardElement);
   closePopup(popupElementCard);
   newCardElement.reset();
