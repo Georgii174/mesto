@@ -34,6 +34,7 @@ export const validPopup = {
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible'
 };
+
 // Кнопка сохранить
 function saveButtonFormSubmit(evt) {
   evt.preventDefault();
@@ -41,17 +42,20 @@ function saveButtonFormSubmit(evt) {
   jobProfail.textContent = jobInputElement.value;
   closePopup(popupElementProfel);
 };
+
 // функция профеля
 function openProfilePopup() {
   nameInputElement.value = nameProfail.textContent;
   jobInputElement.value = jobProfail.textContent;
   openPopup(popupElementProfel);
 };
+
 //valadadion form
   const validationFormProfel = new FormValidator(validPopup, formProfelElement);
   validationFormProfel.enableValidation();
   const validationFormAddNewCards = new FormValidator(validPopup, newCardElement);
   validationFormAddNewCards.enableValidation();
+
 // Добавление карточек в DOM
 // Карточки из масива
 initialCards.forEach((item) => {
@@ -59,22 +63,18 @@ initialCards.forEach((item) => {
   const cardElement = card.generateCard();
   document.querySelector('.group').append(cardElement);
 });
+
 // Добавление новых карточек из форм
 function addBtFormSubmit(evt) {
   evt.preventDefault();
   const newCard = new Card(nameCardElement.value, linkCardElement.value, '.group-template', openPopup);
   const cardElement = newCard.generateCard();
-  const validationForm = new FormValidator(validPopup, newCardElement);
-  validationForm._toggleBtState();
+  const validationFormAddCards = new FormValidator(validPopup, newCardElement);
+  validationFormAddCards._toggleBtState();
   document.querySelector('.group').append(cardElement);
   closePopup(popupElementCard);
   newCardElement.reset();
 };
-
-
-
-// const validationForm = new FormValidator(validPopup, formElement);
-//    validationForm.enableValidation();
 
 // слушатели
 popupEditButtonElement.addEventListener('click', openProfilePopup);
