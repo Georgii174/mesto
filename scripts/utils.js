@@ -16,7 +16,8 @@ export function closePopupEsc(evt) {
   }
 };
 // закрытия попап по клику на пустую область
-export const popup = document.querySelectorAll('.popup').forEach(item => {
+const popups = document.querySelectorAll('.popup');
+popups.forEach(item => {
   item.addEventListener('mousedown', (evt) => {
     if (evt.target === evt.currentTarget) {
       closePopup(item);
