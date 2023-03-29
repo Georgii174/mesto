@@ -1,15 +1,11 @@
-// import {
-//   initialCards,
-//   cardContent
-// } from './constants.js';
 export const popupElementPhotoCards = document.querySelector('.popup_photo');
 const popupImages = document.querySelector('.popup__images-cards');
 const titlePopup = document.querySelector('.popup__name-cards');
 
 export class Card {
-  constructor(name, link, templateSelector, openPopup) {
-    this._name = name;
-    this._link = link;
+  constructor(data, templateSelector, openPopup) {
+    this._name = data.name;
+    this._link = data.link;
     this._templateSelector = templateSelector;
     this._openPopup = openPopup;
   }

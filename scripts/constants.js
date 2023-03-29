@@ -54,6 +54,7 @@ export const linkCardElement = popupElementCard.querySelector('.popup__input_lin
 // form
 export const formProfelElement = document.querySelector('.popup__form-profel');
 export const newCardElement = document.querySelector('.popup__form_new-cards');
+// export const validationForm =
 // template
 export const imgPopup = document.querySelector('.popup__images-cards');
 export const titlePopup = document.querySelector('.popup__name-cards');

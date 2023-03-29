@@ -61,6 +61,6 @@ export class FormValidator {
 
   enableValidation() {
     this._setEventListeners();
-    this._toggleBtState(this._inputList, this._buttonElement)
+    this._toggleBtState(this._inputList, this._buttonElement);
   }
 }

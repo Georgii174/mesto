@@ -19,7 +19,6 @@ import {
   closeBtNewCard,
   popupCloseButton
 } from './constants.js';
-
 import { FormValidator } from './FormValidator.js';
 import { openPopup, closePopup } from './utils.js'
 
@@ -30,44 +29,49 @@ function saveButtonFormSubmit(evt) {
   jobProfail.textContent = jobInputElement.value;
   closePopup(popupElementProfel);
 };
-
 // функция профеля
 function openProfilePopup() {
   nameInputElement.value = nameProfail.textContent;
   jobInputElement.value = jobProfail.textContent;
   openPopup(popupElementProfel);
-};
+  validationFormProfel.disableSubmitBt();
+ };
 
 //valadadion form
 const validationFormProfel = new FormValidator(validPopup, formProfelElement);
 validationFormProfel.enableValidation();
 const validationFormAddNewCards = new FormValidator(validPopup, newCardElement);
 validationFormAddNewCards.enableValidation();
-const validationFormAddCards = new FormValidator(validPopup, newCardElement);
-validationFormAddCards.disableSubmitBt();
 
 // Добавление карточек в DOM
-// Карточки из масива
-initialCards.forEach((item) => {
-  const card = new Card(item.name, item.link, '.group-template', openPopup);
+// функция создания карточки
+function createCard(data) {
+  const card = new Card(data, '.group-template', openPopup);
   const cardElement = card.generateCard();
+  return cardElement
+};
+// Карточки из масива
+initialCards.forEach((data) => {
+  const cardElement = createCard(data);
   cardContent.append(cardElement);
 });
-
 // Добавление новых карточек из форм
 function addBtFormSubmit(evt) {
   evt.preventDefault();
-  const newCard = new Card(nameCardElement.value, linkCardElement.value, '.group-template', openPopup);
-  const cardElement = newCard.generateCard();
-  cardContent.prepend(cardElement);
+  const data = {
+    name: nameCardElement.value,
+    link: linkCardElement.value,
+  };
+  const templateSelector = createCard(data)
+  cardContent.prepend(templateSelector);
+  validationFormAddNewCards.disableSubmitBt();
   closePopup(popupElementCard);
-  newCardElement.reset();
 };
-
 // слушатели
 popupEditButtonElement.addEventListener('click', openProfilePopup);
 popupAddButtonElement.addEventListener('click', function () {
   openPopup(popupElementCard);
+  newCardElement.reset();
 });
 closeBtProfel.addEventListener('click', function () {
   closePopup(popupElementProfel);
