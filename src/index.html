@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./pages/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Место</title>
+</head>
+
+<body class="page">
+  <header class="header">
+    <img src="<%=require('./images/logo/logo.svg')%>" alt="место" class="header__logo">
+  </header>
+  <main class="content">
+    <section class="profail">
+      <img src="<%=require('./images/image.jpg')%>" class="profail__avatar" alt="логотип">
+      <div class="profail__blok">
+        <h1 class="profail__name">Жак-Ив Кусто</h1>
+        <button type="button" class="profail__edit-button"></button>
+        <p class="profail__text">Исследователь океана</p>
+      </div>
+      <button type="button" class="profail__add-button"></button>
+    </section>
+    <section class="group">
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2022. Георгий Анисимов</p>
+  </footer>
+  <div class="popup popup_profel">
+    <div class="popup__container">
+      <button type="button" class="popup__close popup__close_profel"></button>
+      <h3 class="popup__title">Редактировать профиль</h3>
+      <form class="popup__form popup__form-profel" name="popup-content" novalidate>
+
+        <input type="text" class="popup__input popup__input_name_block" id="name-input" name="nameInput"
+          placeholder="Имя" minlength="2" maxlength="40" required>
+        <span class="popup__error popup__error_visible name-input-error"></span>
+
+        <input type="text" class="popup__input popup__input_text_block" id="job-input" name="jobInput"
+          placeholder="Вид деятельности" minlength="2" maxlength="200" required>
+        <span class="popup__error popup__error_visible job-input-error"></span>
+
+        <button class="popup__button" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_new-card">
+    <div class="popup__container">
+      <button type="button" class="popup__close popup__close_new-card"></button>
+      <h3 class="popup__title">Новое место</h3>
+      <form class="popup__form popup__form_new-cards" name="popup__new-cards" novalidate>
+
+        <input type="text" class="popup__input popup__input_name_card" id="nameCard-input" name="nameCard"
+          placeholder="Название" minlength="2" maxlength="30" required>
+        <span class="popup__error popup__error_visible nameCard-input-error"></span>
+
+        <input type="url" class="popup__input popup__input_link_card" id="linkCard-input" name="linkCard"
+          placeholder="Ссылка на картинку" required>
+        <span class="popup__error popup__error_visible linkCard-input-error"></span>
+
+        <button class="popup__button" type="submit">Создать</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_photo">
+    <div class="popup__images-wrapper">
+      <button type="button" class="popup__close popup__close_images-card"></button>
+      <img class="popup__images-cards">
+      <p class="popup__name-cards"></p>
+    </div>
+  </div>
+  <template class="group-template">
+    <article class="group__element">
+      <img class="group__images">
+      <button type="button" class="group__button-del"></button>
+      <div class="group__title">
+        <h2 class="group__name"></h2>
+        <button type="button" class="group__button-like"></button>
+      </div>
+    </article>
+  </template>
+  <script type="module" src="./pages/index.js"></script>
+</body>
+
+</html>
