@@ -1,34 +1,34 @@
 export const initialCards = [
   {
-    name: 'Архыз',
+    title: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
   },
   {
-    name: 'Челябинская область',
+    title: 'Челябинская область',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
   },
   {
-    name: 'Иваново',
+    title: 'Иваново',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
   },
   {
-    name: 'Камчатка',
+    title: 'Камчатка',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
   },
   {
-    name: 'Холмогорский район',
+    title: 'Холмогорский район',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
   },
   {
-    name: 'Байкал',
+    title: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   },
   {
-    name: 'Камчатка',
+    title: 'Камчатка',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
   },
   {
-    name: 'Челябинская область',
+    title: 'Челябинская область',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
   },
 ];
@@ -49,15 +49,15 @@ export const nameProfail = document.querySelector('.profail__name');
 export const jobProfail = document.querySelector('.profail__text');
 export const nameInputElement = popupElementProfel.querySelector('.popup__input_name_block');
 export const jobInputElement = popupElementProfel.querySelector('.popup__input_text_block');
-export const nameCardElement = popupElementCard.querySelector('.popup__input_name_card');
-export const linkCardElement = popupElementCard.querySelector('.popup__input_link_card');
+// export const nameCardElement = popupElementCard.querySelector('.popup__input_name_card');
+// export const linkCardElement = popupElementCard.querySelector('.popup__input_link_card');
 // form
 export const formProfelElement = document.querySelector('.popup__form-profel');
-export const newCardElement = document.querySelector('.popup__form_new-cards');
+export const formNewCardElement = document.querySelector('.popup__form_new-cards');
 // export const validationForm =
 // template
-export const imgPopup = document.querySelector('.popup__images-cards');
-export const titlePopup = document.querySelector('.popup__name-cards');
+// export const imgPopup = document.querySelector('.popup__images-cards');
+// export const titlePopup = document.querySelector('.popup__name-cards');
 export const cardContent = document.querySelector('.group');
 // valadadion form
 export const validPopup = {

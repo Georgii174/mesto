@@ -4,15 +4,15 @@ import {
   cardContent,
   validPopup,
   formProfelElement,
-  newCardElement,
+  formNewCardElement,
   popupEditButtonElement,
   popupAddButtonElement,
   // popupElementCard,
   // popupElementProfel,
-  // nameProfail,
-  // jobProfail,
-  // nameInputElement,
-  // jobInputElement,
+  nameProfail,
+  jobProfail,
+  nameInputElement,
+  jobInputElement,
   // nameCardElement,
   // linkCardElement,
   // closeBtProfel,
@@ -36,21 +36,23 @@ openAddCardPopup.setEventListener();
 const popupElementPhotoCards = new PopupWithImage('.popup_photo');
 popupElementPhotoCards.setEventListener();
 
+// валидация форм
 const validationFormProfel = new FormValidator(validPopup, formProfelElement);
 validationFormProfel.enableValidation();
-const validationFormAddNewCards = new FormValidator(validPopup, newCardElement);
+const validationFormAddNewCards = new FormValidator(validPopup, formNewCardElement);
 validationFormAddNewCards.enableValidation();
 
+// попап профеля
 const userProfel = new UserInfo({
   nameSelector: '.profail__name',
   jobSelector: '.profail__text',
-})
+});
 
 popupEditButtonElement.addEventListener('click', () => {
   openProfilePopup.open();
-  const {name, job} = UserInfo.getUserInfo();
-  formProfelElement.name.value = name;
-  formProfelElement.job.value = job;
+  const {name, job} = userProfel.getUserInfo();
+  nameInputElement.value = name;
+  jobInputElement.job.value = job;
   validationFormProfel.disableSubmitBt();
 });
 
@@ -58,29 +60,30 @@ function submitBtProfail(data) {
   userProfel.setUserInfo(data);
   openProfilePopup.close();
 };
+////////////////////////////////////////////////////////////////////////////////
+
+//// попап добавление новой карточки
+function submitBtAddCard(data) {
+  const card = createCard(data.title, data.link, '.group-template', handleCardClick);
+  cardElement.addItem(card);
+};
 
 popupAddButtonElement.addEventListener('click', () => {
   openAddCardPopup.open();
   validationFormAddNewCards.disableSubmitBt();
 });
 
-function submitBtAddCard(data) {
-  const card = createCard(data._name, data._link, '.group-template', handleCardClick);
-  cardContent.addItem(card);
-};
+//////////////////////////////////////////////////////////////////////////////////////
 
-function handleCardClick(name, link) {
-  popupElementPhotoCards.open(name, link);
-};
-
-function createCard(data) {
-  const card = new Card(data, '.group-template', openPopup);
+// карточки
+const createCard = (title, link, templateSelector, openPopup) => {
+  const card = new Card(title, link, templateSelector, openPopup);
   return card.generateCard();
 };
 
 function renderCards(cardItem) {
-  const card = createCard(cardItem._name, cardItem._link, '.group-template', handleCardClick);
-  cardContent.addItem(card);
+  const card = createCard(cardItem.title, cardItem.link, '.group-template', handleCardClick);
+  cardElement.addItem(card);
 };
 
 const cardElement = new Section({
@@ -88,4 +91,11 @@ const cardElement = new Section({
   renderer: renderCards,
 }, '.group');
 
-cardElement.renderedItems();
+cardElement.renderItems();
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//открытие карточки
+function handleCardClick(title, link) {
+  popupElementPhotoCards.open(title, link);
+};
+

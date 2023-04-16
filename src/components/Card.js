@@ -1,11 +1,7 @@
-// export const popupElementPhotoCards = document.querySelector('.popup_photo');
-const popupImages = document.querySelector('.popup__images-cards');
-const titlePopup = document.querySelector('.popup__name-cards');
-
 export class Card {
-  constructor(data, templateSelector, openPopup) {
-    this._name = data.name;
-    this._link = data.link;
+  constructor(title, link, templateSelector, openPopup) {
+    this._title = title;
+    this._link = link;
     this._templateSelector = templateSelector;
     this._handleCardClick = openPopup;
   }
@@ -21,22 +17,16 @@ export class Card {
 
   generateCard() {
     this._element = this._getTemplate();
-    const groupImg = this._element.querySelector('.group__images');
-    groupImg.src = this._link;
-    groupImg.alt = this._name;
-    this._element.querySelector('.group__name').textContent = this._name;
+    this._groupImg = this._element.querySelector('.group__images');
+    this._groupTitle = this._element.querySelector('.group__name');
+    this._groupImg.src = this._link;
+    this._groupImg.alt = this._title;
+    this._groupTitle.textContent = this._title;
 
     this._setEventListeners();
 
     return this._element;
   }
-
-  // _handleOpenPopup() {
-  //   this._handleCardClick(popupElementPhotoCards);
-  //   popupImages.src = this._link;
-  //   titlePopup.alt = this._name;
-  //   titlePopup.textContent = this._name;
-  // }
 
   _handleClickLike() {
     this._element.querySelector('.group__button-like').classList.toggle('group__button-like_active');
@@ -48,8 +38,8 @@ export class Card {
   }
 
   _setEventListeners() {
-    this._element.querySelector('.group__images').addEventListener('click', () => {
-      this._handleOpenPopup();
+    this._groupImg.addEventListener('click', () => {
+      this._handleCardClick(this._title, this._link);
     });
 
     this._element.querySelector('.group__button-like').addEventListener('click', () => {
