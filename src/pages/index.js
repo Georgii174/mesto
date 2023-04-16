@@ -52,7 +52,7 @@ popupEditButtonElement.addEventListener('click', () => {
   openProfilePopup.open();
   const {name, job} = userProfel.getUserInfo();
   nameInputElement.value = name;
-  jobInputElement.job.value = job;
+  jobInputElement.value = job;
   validationFormProfel.disableSubmitBt();
 });
 
