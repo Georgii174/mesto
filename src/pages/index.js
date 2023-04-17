@@ -1,4 +1,4 @@
-import { Card} from '../components/Card.js';
+import Card from '../components/Card.js';
 import {
   initialCards,
   cardContent,
@@ -9,8 +9,8 @@ import {
   popupAddButtonElement,
   // popupElementCard,
   // popupElementProfel,
-  nameProfail,
-  jobProfail,
+  // nameProfail,
+  // jobProfail,
   nameInputElement,
   jobInputElement,
   // nameCardElement,
@@ -60,19 +60,19 @@ function submitBtProfail(data) {
   userProfel.setUserInfo(data);
   openProfilePopup.close();
 };
+
 ////////////////////////////////////////////////////////////////////////////////
 
 //// попап добавление новой карточки
-function submitBtAddCard(data) {
-  const card = createCard(data.title, data.link, '.group-template', handleCardClick);
-  cardElement.addItem(card);
-};
-
 popupAddButtonElement.addEventListener('click', () => {
   openAddCardPopup.open();
   validationFormAddNewCards.disableSubmitBt();
 });
 
+function submitBtAddCard(data) {
+  const card = createCard(data.nameCard, data.linkCard, '.group-template', handleCardClick);
+  cardElement.addItem(card);
+};
 //////////////////////////////////////////////////////////////////////////////////////
 
 // карточки
