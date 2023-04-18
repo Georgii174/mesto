@@ -1,26 +1,15 @@
 import Card from '../components/Card.js';
 import {
   initialCards,
-  cardContent,
   validPopup,
   formProfelElement,
   formNewCardElement,
   popupEditButtonElement,
   popupAddButtonElement,
-  // popupElementCard,
-  // popupElementProfel,
-  // nameProfail,
-  // jobProfail,
   nameInputElement,
   jobInputElement,
-  // nameCardElement,
-  // linkCardElement,
-  // closeBtProfel,
-  // closeBtNewCard,
-  // popupCloseButton
 } from '../utils/constants.js';
 import { FormValidator } from '../components/FormValidator.js';
-//import Popup from '../components/Popup.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import Section from '../components/Section.js';
@@ -54,6 +43,7 @@ popupEditButtonElement.addEventListener('click', () => {
   nameInputElement.value = name;
   jobInputElement.value = job;
   validationFormProfel.disableSubmitBt();
+  validationFormProfel.resetError();
 });
 
 function submitBtProfail(data) {
@@ -67,6 +57,7 @@ function submitBtProfail(data) {
 popupAddButtonElement.addEventListener('click', () => {
   openAddCardPopup.open();
   validationFormAddNewCards.disableSubmitBt();
+  validationFormAddNewCards.resetError();
 });
 
 function submitBtAddCard(data) {
@@ -91,7 +82,7 @@ const cardElement = new Section({
   renderer: renderCards,
 }, '.group');
 
-cardElement.renderItems();
+cardElement.renderItems(initialCards);
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 //открытие карточки
