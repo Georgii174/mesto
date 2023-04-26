@@ -14,7 +14,9 @@
   </header>
   <main class="content">
     <section class="profail">
-      <img src="<%=require('./images/image.jpg')%>" class="profail__avatar" alt="логотип">
+      <div class="profail__avatar">
+        <img src="<%=require('./images/image.jpg')%>" class="profail__avatar-images" alt="аватарка">
+      </div>
       <div class="profail__blok">
         <h1 class="profail__name">Жак-Ив Кусто</h1>
         <button type="button" class="profail__edit-button"></button>
@@ -38,9 +40,9 @@
           placeholder="Имя" minlength="2" maxlength="40" required>
         <span class="popup__error popup__error_visible name-input-error"></span>
 
-        <input type="text" class="popup__input popup__input_text_block" id="job-input" name="jobInput"
+        <input type="text" class="popup__input popup__input_text_block" id="about-input" name="aboutInput"
           placeholder="Вид деятельности" minlength="2" maxlength="200" required>
-        <span class="popup__error popup__error_visible job-input-error"></span>
+        <span class="popup__error popup__error_visible about-input-error"></span>
 
         <button class="popup__button" type="submit">Сохранить</button>
       </form>
@@ -69,6 +71,26 @@
       <button type="button" class="popup__close popup__close_images-card"></button>
       <img class="popup__images-cards">
       <p class="popup__name-cards"></p>
+    </div>
+  </div>
+  <div class="popup popup_delete-card">
+    <div class="popup__container_delete-card">
+      <button type="button" class="popup__close popup__close_delete-card"></button>
+      <h3 class="popup__title">Вы уверены?</h3>
+      <button class="popup__button" type="submit">Да</button>
+    </div>
+  </div>
+  <div class="popup popup_avatar">
+    <div class="popup__container_avatar">
+      <button type="button" class="popup__close popup__close_avatar"></button>
+      <h3 class="popup__title">Обновить аватар</h3>
+      <form class="popup__form popup__form_avatar" name="popup__new-avatar" novalidate>
+
+        <input type="url" class="popup__input popup__input_link_avatar" id="avatarInput" name="avatar"
+          placeholder="Ссылка на аватарку" required>
+        <span class="popup__error popup__error_visible avatarInput-error"></span>
+
+        <button class="popup__button" type="submit">Создать</button>
     </div>
   </div>
   <template class="group-template">

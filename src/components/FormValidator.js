@@ -57,7 +57,7 @@ export class FormValidator {
     });
   }
 
-  resetError() { //Спасибо за ваши советы.
+  resetError() {
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
     });

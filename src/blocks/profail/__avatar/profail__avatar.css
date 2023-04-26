@@ -1,14 +1,21 @@
 .profail__avatar {
-  border-radius: 100px;
-  max-width: 169px;
-  max-height: 122px;
-  margin: 40px auto 22px;
+  width: 120px;
+  height: 120px;
+  background-image: url('../../../images/image.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:40px auto 22px;
 }
 
 @media screen and (min-width: 480px) {
   .profail__avatar {
-    max-width: 169px;
-    max-height: 121px;
+    /* max-width: 169px;
+    max-height: 121px; */
     margin: 40px 0 22px 0;
   }
 }
