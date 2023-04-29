@@ -15,7 +15,8 @@
   <main class="content">
     <section class="profail">
       <div class="profail__avatar">
-        <img src="<%=require('./images/image.jpg')%>" class="profail__avatar-images" alt="аватарка">
+        <!-- <img src="<%=require('./images/image.jpg')%>" class="profail__avatar-images" alt="аватарка"> -->
+        <img src="#" class="profail__avatar-images" alt="аватарка">
       </div>
       <div class="profail__blok">
         <h1 class="profail__name">Жак-Ив Кусто</h1>
@@ -40,11 +41,11 @@
           placeholder="Имя" minlength="2" maxlength="40" required>
         <span class="popup__error popup__error_visible name-input-error"></span>
 
-        <input type="text" class="popup__input popup__input_text_block" id="about-input" name="aboutInput"
+        <input type="text" class="popup__input popup__input_text_block" id="job-input" name="jobInput"
           placeholder="Вид деятельности" minlength="2" maxlength="200" required>
-        <span class="popup__error popup__error_visible about-input-error"></span>
+        <span class="popup__error popup__error_visible job-input-error"></span>
 
-        <button class="popup__button" type="submit">Сохранить</button>
+        <button class="popup__button-save" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
@@ -62,7 +63,7 @@
           placeholder="Ссылка на картинку" required>
         <span class="popup__error popup__error_visible linkCard-input-error"></span>
 
-        <button class="popup__button" type="submit">Создать</button>
+        <button class="popup__button-save" type="submit">Создать</button>
       </form>
     </div>
   </div>
@@ -77,7 +78,7 @@
     <div class="popup__container_delete-card">
       <button type="button" class="popup__close popup__close_delete-card"></button>
       <h3 class="popup__title">Вы уверены?</h3>
-      <button class="popup__button" type="submit">Да</button>
+      <button class="popup__button-save" type="submit">Да</button>
     </div>
   </div>
   <div class="popup popup_avatar">
@@ -86,20 +87,21 @@
       <h3 class="popup__title">Обновить аватар</h3>
       <form class="popup__form popup__form_avatar" name="popup__new-avatar" novalidate>
 
-        <input type="url" class="popup__input popup__input_link_avatar" id="avatarInput" name="avatar"
+        <input type="url" class="popup__input popup__input_link_avatar" id="avatar-input" name="avatarInput"
           placeholder="Ссылка на аватарку" required>
-        <span class="popup__error popup__error_visible avatarInput-error"></span>
+        <span class="popup__error popup__error_visible avatar-input-error"></span>
 
-        <button class="popup__button" type="submit">Создать</button>
+        <button class="popup__button-save" type="submit">Создать</button>
     </div>
   </div>
-  <template class="group-template">
+  <template class="group-template" id="group-template">
     <article class="group__element">
       <img class="group__images">
       <button type="button" class="group__button-del"></button>
       <div class="group__title">
         <h2 class="group__name"></h2>
         <button type="button" class="group__button-like"></button>
+        <p class="group__like-check">0</p>
       </div>
     </article>
   </template>

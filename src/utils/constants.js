@@ -47,10 +47,11 @@ export const popupAvatarElement = document.querySelector('.profail__avatar-image
 // export const closeBtNewCard = document.querySelector('.popup__close_new-card');
 // export const popupCloseButton = document.querySelector('.popup__close_images-card');
 // input
-export const nameProfail = document.querySelector('.profail__name');
-export const aboutProfail = document.querySelector('.profail__text');
+// export const nameProfail = document.querySelector('.profail__name');
+// export const jobProfail = document.querySelector('.profail__text');
+// export const avatarProfail = document.querySelector('.profal__avatar');
 export const nameInputElement = popupElementProfel.querySelector('.popup__input_name_block');
-export const aboutInputElement = popupElementProfel.querySelector('.popup__input_text_block');
+export const jobInputElement = popupElementProfel.querySelector('.popup__input_text_block');
 // export const nameCardElement = popupElementCard.querySelector('.popup__input_name_card');
 // export const linkCardElement = popupElementCard.querySelector('.popup__input_link_card');
 // form
@@ -66,7 +67,7 @@ export const cardContent = document.querySelector('.group');
 export const validPopup = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
+  submitButtonSelector: '.popup__button-save',
   inactiveButtonClass: 'popup__button_disabled',
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible'
