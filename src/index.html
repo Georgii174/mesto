@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="./pages/index.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Место</title>
 </head>
@@ -41,7 +40,7 @@
           placeholder="Имя" minlength="2" maxlength="40" required>
         <span class="popup__error popup__error_visible name-input-error"></span>
 
-        <input type="text" class="popup__input popup__input_text_block" id="job-input" name="jobInput"
+        <input type="text" class="popup__input popup__input_text_block" id="job-input" name="aboutInput"
           placeholder="Вид деятельности" minlength="2" maxlength="200" required>
         <span class="popup__error popup__error_visible job-input-error"></span>
 
@@ -55,11 +54,11 @@
       <h3 class="popup__title">Новое место</h3>
       <form class="popup__form popup__form_new-cards" name="popup__new-cards" novalidate>
 
-        <input type="text" class="popup__input popup__input_name_card" id="nameCard-input" name="nameCard"
+        <input type="text" class="popup__input popup__input_name_card" id="nameCard-input" name="name"
           placeholder="Название" minlength="2" maxlength="30" required>
         <span class="popup__error popup__error_visible nameCard-input-error"></span>
 
-        <input type="url" class="popup__input popup__input_link_card" id="linkCard-input" name="linkCard"
+        <input type="url" class="popup__input popup__input_link_card" id="linkCard-input" name="link"
           placeholder="Ссылка на картинку" required>
         <span class="popup__error popup__error_visible linkCard-input-error"></span>
 
@@ -100,12 +99,13 @@
       <button type="button" class="group__button-del"></button>
       <div class="group__title">
         <h2 class="group__name"></h2>
-        <button type="button" class="group__button-like"></button>
-        <p class="group__like-check">0</p>
+        <div class="group__title_like">
+          <button type="button" class="group__button-like"></button>
+          <p class="group__like-check">0</p>
+        </div>
       </div>
     </article>
   </template>
-  <script type="module" src="./pages/index.js"></script>
 </body>
 
 </html>

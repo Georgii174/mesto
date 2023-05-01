@@ -52,7 +52,7 @@ export default class Card {
   }
 
   setLikeCheck(res) {
-    this._likeCheck.textContent = `${this._likes.length}`;
+    this._likeCheck.textContent = res.likes.length;
   }
 
   handleDelCard() {
@@ -86,7 +86,7 @@ export default class Card {
       if (this._likeCard.classList.contains('group__button-like_active')) {
         this._dislike();
       } else {
-        this.like();
+        this._like();
       }
     });
 
