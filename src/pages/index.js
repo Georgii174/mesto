@@ -75,8 +75,8 @@ const validationFormAvatar = new FormValidator(validPopup, formAvatarElement);
 validationFormAvatar.enableValidation();
 //////////////////////////////////////////
 // попап профеля/////////////////////////
-const openProfilePopup = new PopupWithForm('.popup_profel', submitBtProfail);
-openProfilePopup.setEventListener();
+const popupEditProfile = new PopupWithForm('.popup_profel', submitBtProfail);
+popupEditProfile.setEventListener();
 
 const userProfel = new UserInfo({
   nameSelector: '.profail__name',
@@ -85,21 +85,24 @@ const userProfel = new UserInfo({
 });
 
 async function submitBtProfail(data) {
-  openProfilePopup.renderLoading(true, 'Save...');
-  try {
-    const res = await api.setUserInfo(data);
-    userProfel.setUserInfo(res);
-    userProfel.setUserAvatar(res);
-    openProfilePopup.close();
-  } catch (evt) {
-    console.warn(evt)
-  } finally {
-    openProfilePopup.renderLoading(false);
-  }
+  popupEditProfile.renderLoading(true, 'Save...');
+  api.setUserInfo(data)
+    .then(res => {
+      userProfel.setUserInfo(res);
+      userProfel.setUserAvatar(res);
+      popupEditProfile.close();
+    })
+    .catch((evt) => {
+      console.warn(evt)
+    }).finally(
+      () => {
+        popupEditProfile.renderLoading(false);
+      }
+    )
 };
 
 popupEditButtonElement.addEventListener('click', () => {
-  openProfilePopup.open();
+  popupEditProfile.open();
   const info = userProfel.getUserInfo();
   nameInputElement.value = info.name;
   jobInputElement.value = info.about;
@@ -108,50 +111,58 @@ popupEditButtonElement.addEventListener('click', () => {
 });
 /////////////////////////////////////////
 //аватарка профеля//////////////////////
-const openAvatarPopup = new PopupWithForm('.popup_avatar', submitBtAvatar);
-openAvatarPopup.setEventListener();
+const popupAvatar = new PopupWithForm('.popup_avatar', submitBtAvatar);
+popupAvatar.setEventListener();
 
 popupAvatarElement.addEventListener('click', () => {
-  openAvatarPopup.open();
+  popupAvatar.open();
   validationFormAvatar.resetError();
   validationFormAvatar.disableSubmitBt();
 });
 
 async function submitBtAvatar(data) {
-  openAvatarPopup.renderLoading(true, 'Save...');
-  try {
-    const res = await api.setUserInfoAvatar(data);
-    userProfel.setUserAvatar(res);
-    openAvatarPopup.close();
-  } catch (evt) {
-    console.warn(evt)
-  } finally {
-    openAvatarPopup.renderLoading(false);
-  }
+  popupAvatar.renderLoading(true, 'Save...');
+  api.setUserInfoAvatar(data)
+    .then(res => {
+      userProfel.setUserAvatar(res);
+      popupAvatar.close();
+    })
+    .catch((evt) => {
+      console.warn(evt)
+    })
+    .finally(
+      () => {
+        popupAvatar.renderLoading(false);
+      }
+    )
 };
 /////////////////////////////////////////
 //попап добавление новой карточки///////
-const openAddCardPopup = new PopupWithForm('.popup_new-card', submitBtAddCard);
-openAddCardPopup.setEventListener();
+const popupAddCard = new PopupWithForm('.popup_new-card', submitBtAddCard);
+popupAddCard.setEventListener();
 
 popupAddButtonElement.addEventListener('click', () => {
-  openAddCardPopup.open();
+  popupAddCard.open();
   validationFormAddNewCards.disableSubmitBt();
   validationFormAddNewCards.resetError();
 });
 
 async function submitBtAddCard(data) {
-  openAddCardPopup.renderLoading(true, 'Save...');
-  try {
-    const res = await api.addCard(data);
-    const card = createCard(res);
-    cardElement.addItem(card);
-    openAddCardPopup.close();
-  } catch (evt) {
-    console.warn(evt)
-  } finally {
-    openAddCardPopup.renderLoading(false);
-  }
+  popupAddCard.renderLoading(true, 'Save...');
+  api.addCard(data)
+    .then(res => {
+      const card = createCard(res);
+      cardElement.addItem(card);
+      popupAddCard.close();
+    })
+    .catch((evt) => {
+      console.warn(evt)
+    })
+    .finally(
+      () => {
+        popupAddCard.renderLoading(false);
+      }
+    )
 };
 /////////////////////////////////////////
 //открытие карточки/////////////////////
