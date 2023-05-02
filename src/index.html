@@ -16,6 +16,7 @@
       <div class="profail__avatar">
         <!-- <img src="<%=require('./images/image.jpg')%>" class="profail__avatar-images" alt="аватарка"> -->
         <img src="#" class="profail__avatar-images" alt="аватарка">
+        <button type="button" class="profail__avatar-button"></button>
       </div>
       <div class="profail__blok">
         <h1 class="profail__name">Жак-Ив Кусто</h1>
@@ -36,11 +37,11 @@
       <h3 class="popup__title">Редактировать профиль</h3>
       <form class="popup__form popup__form-profel" name="popup-content" novalidate>
 
-        <input type="text" class="popup__input popup__input_name_block" id="name-input" name="nameInput"
+        <input type="text" class="popup__input popup__input_name_block" id="name-input" name="name"
           placeholder="Имя" minlength="2" maxlength="40" required>
         <span class="popup__error popup__error_visible name-input-error"></span>
 
-        <input type="text" class="popup__input popup__input_text_block" id="job-input" name="aboutInput"
+        <input type="text" class="popup__input popup__input_text_block" id="job-input" name="about"
           placeholder="Вид деятельности" minlength="2" maxlength="200" required>
         <span class="popup__error popup__error_visible job-input-error"></span>
 
@@ -86,7 +87,7 @@
       <h3 class="popup__title">Обновить аватар</h3>
       <form class="popup__form popup__form_avatar" name="popup__new-avatar" novalidate>
 
-        <input type="url" class="popup__input popup__input_link_avatar" id="avatar-input" name="avatarInput"
+        <input type="url" class="popup__input popup__input_link_avatar" id="avatar-input" name="avatar"
           placeholder="Ссылка на аватарку" required>
         <span class="popup__error popup__error_visible avatar-input-error"></span>
 

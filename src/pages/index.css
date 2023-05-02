@@ -14,6 +14,8 @@
 
 @import url(../blocks/profail/__avatar-images/profail__avatar-images.css);
 
+@import url(../blocks/profail/__avatar-button/profail__avatar-button.css);
+
 @import url(../blocks/profail/__blok/profail__blok.css);
 
 @import url(../blocks/profail/__name/profail__name.css);

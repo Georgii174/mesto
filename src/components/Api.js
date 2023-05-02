@@ -24,23 +24,20 @@ export default class Api {
     }).then(this._hendleResponse)
   }
 
-  setUserInfo(userInfo) {
+  setUserInfo(data) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
       headers: this._headers,
-      body: JSON.stringify({
-        name: userInfo.name,
-        about: userInfo.about,
-      })
+      body: JSON.stringify(data)
     }).then(this._hendleResponse)
   }
 
-  setUserInfoAvatar(userInfo) {
+  setUserInfoAvatar(data) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
-        avatar: userInfo.avatar
+        avatar: data.avatar
       })
     }).then(this._hendleResponse)
   }

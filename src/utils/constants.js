@@ -41,7 +41,7 @@ export const popupElementCard = document.querySelector('.popup_new-card');
 // button open popup
 export const popupEditButtonElement = document.querySelector('.profail__edit-button');
 export const popupAddButtonElement = document.querySelector('.profail__add-button');
-export const popupAvatarElement = document.querySelector('.profail__avatar-images');
+export const popupAvatarElement = document.querySelector('.profail__avatar-button');
 // close popups
 // export const closeBtProfel = document.querySelector('.popup__close_profel');
 // export const closeBtNewCard = document.querySelector('.popup__close_new-card');
